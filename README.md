@@ -17,13 +17,6 @@ Personal portfolio website of **Ajay Ramchandra Kori**, Android & Flutter Develo
 
 Plain HTML, CSS and JavaScript — no build step or dependencies. Animated particle background, scroll reveals, live phone-mockup demos for each app, dark/light theme and fully responsive layout.
 
-## Run locally
-
-Open `index.html` in a browser, or serve the folder:
-
-```bash
-npx http-server -p 5500
-```
 
 ## Contact
 
