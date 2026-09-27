@@ -2,7 +2,7 @@
 
 Personal portfolio website of **Ajay Ramchandra Kori**, Android & Flutter Developer with 5 years of experience building real-time, high-traffic mobile apps used by millions.
 
-**Live site:** https://ajay1130.github.io/my-portfolio/
+**Live site:** https://ajay1130.github.io
 
 ## Featured apps
 
