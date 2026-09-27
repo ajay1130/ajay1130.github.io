@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajay Kori — Flutter & Android Developer</title>
+  <meta name="description" content="Ajay Ramchandra Kori — Flutter & Android Developer with 5 years of experience building real-time, high-traffic mobile apps used by millions across fintech, e-commerce, social and communication domains." />
+  <meta name="theme-color" content="#07080f" />
+  <meta property="og:title" content="Ajay Kori — Flutter & Android Developer" />
+  <meta property="og:description" content="5 years building real-time mobile apps used by millions. Flutter · Dart · Kotlin · Jetpack Compose." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233DDC84'/><stop offset='1' stop-color='%2342A5F5'/></linearGradient></defs><rect width='64' height='64' rx='16' fill='%2307080f'/><text x='50%' y='56%' font-family='Arial Black,Arial' font-size='30' font-weight='900' fill='url(%23g)' text-anchor='middle' dominant-baseline='middle'>AK</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__logo">
+      <span>A</span><span>K</span>
+    </div>
+    <div class="preloader__bar"><i></i></div>
+  </div>
+
+  <!-- Cursor + scroll progress -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo" aria-label="Home">
+      <span class="logo-mark">AK</span>
+      <span class="logo-text">ajay<span class="accent">.dev</span></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="#about" data-link>About</a>
+      <a href="#skills" data-link>Skills</a>
+      <a href="#experience" data-link>Experience</a>
+      <a href="#projects" data-link>Projects</a>
+      <a href="#contact" data-link>Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+        <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a href="#contact" class="btn btn--sm btn--primary magnetic nav__cta">Hire Me</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="badge reveal"><span class="pulse"></span> Open to new opportunities</div>
+          <h1 class="hero__title">
+            <span class="line"><span class="word">Hi, I'm</span></span>
+            <span class="line"><span class="word gradient-text">Ajay Kori</span></span>
+          </h1>
+          <p class="hero__role reveal">
+            <span class="mono">&lt;</span><span id="typed" class="typed"></span><span class="caret"></span><span class="mono">/&gt;</span>
+          </p>
+          <p class="hero__lead reveal">
+            I build <strong>real-time, high-traffic mobile apps</strong> used by millions — from live stock trading
+            to multi-country e-commerce — with Flutter, Dart, Kotlin and Jetpack Compose.
+          </p>
+          <div class="hero__cta reveal">
+            <a href="#projects" class="btn btn--primary magnetic">
+              View My Work
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="assets/Ajay_Kori_Resume.pdf" download class="btn btn--ghost magnetic">
+              Download Resume
+              <svg viewBox="0 0 24 24"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg>
+            </a>
+          </div>
+          <div class="hero__socials reveal">
+            <a href="https://github.com/ajay1130" target="_blank" rel="noopener" aria-label="GitHub" class="social magnetic">
+              <svg viewBox="0 0 24 24" class="fill"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ajay-kori-dev/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social magnetic">
+              <svg viewBox="0 0 24 24" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="mailto:ajaykori2130@gmail.com" aria-label="Email" class="social magnetic">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </a>
+            <span class="hero__location">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              Ahmedabad, India
+            </span>
+          </div>
+          <a href="#projects" class="live-strip reveal">
+            <span class="live-strip__icons">
+              <span class="ls-ic"><svg viewBox="0 0 24 24" class="play-ic"><path fill="#00A0FF" d="M3.6 1.8 13.5 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFD500" d="m16.8 8.7-3.3 3.3 3.3 3.3 3.8-2.1c1.1-.6 1.1-1.8 0-2.4z"/><path fill="#FF3A44" d="M3.6 22.2c.3.2.8.2 1.3-.1l11.9-6.8-3.3-3.3z"/><path fill="#32E07B" d="M3.6 1.8 13.5 12l3.3-3.3L4.9 1.9c-.5-.3-1-.3-1.3-.1z"/></svg></span>
+              <span class="ls-ic"><svg viewBox="0 0 24 24" class="fill"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3-.1 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.4 1-1.4 1.4-2.7 1.4-2.8-.1 0-2.7-1-2.4-4.2zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.2.7-3 1.5-.6.7-1.2 1.9-1 3.1 1.1.1 2.3-.6 3-1.4z"/></svg></span>
+            </span>
+            <span><b>4 apps live</b> on Google Play &amp; App Store</span>
+            <svg viewBox="0 0 24 24" class="ls-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Phone mockup -->
+        <div class="hero__visual reveal" data-tilt>
+          <div class="orbit orbit--1"><span class="chip chip--flutter">Flutter</span></div>
+          <div class="orbit orbit--2"><span class="chip chip--kotlin">Kotlin</span></div>
+          <div class="orbit orbit--3"><span class="chip chip--dart">Dart</span></div>
+          <div class="orbit orbit--4"><span class="chip chip--compose">Compose</span></div>
+
+          <div class="phone">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <div class="app-bar">
+                <div>
+                  <small>Portfolio value</small>
+                  <strong>₹ <span id="ticker">2,48,560</span></strong>
+                </div>
+                <span class="pill-up" id="tickerChange">+2.84%</span>
+              </div>
+              <svg class="chart" viewBox="0 0 300 120" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#3DDC84" stop-opacity=".45"/>
+                    <stop offset="1" stop-color="#3DDC84" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="chart__fill" d="M0,95 C25,90 35,70 60,72 S100,88 125,60 S170,40 190,52 S235,30 255,22 S290,18 300,10 L300,120 L0,120Z" fill="url(#chartFill)"/>
+                <path class="chart__line" d="M0,95 C25,90 35,70 60,72 S100,88 125,60 S170,40 190,52 S235,30 255,22 S290,18 300,10"/>
+              </svg>
+              <div class="stock-list">
+                <div class="stock"><span class="stock__ic">N</span><div><b>NIFTY 50</b><small>Index</small></div><em class="up">+1.2%</em></div>
+                <div class="stock"><span class="stock__ic s2">R</span><div><b>RELIANCE</b><small>NSE</small></div><em class="up">+0.8%</em></div>
+                <div class="stock"><span class="stock__ic s3">T</span><div><b>TCS</b><small>NSE</small></div><em class="down">-0.3%</em></div>
+              </div>
+              <div class="phone__tabs"><i class="active"></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <div class="float-card float-card--1">
+            <span class="fc-ic">⚡</span>
+            <div><b>Live WebSocket</b><small>Latency reduced</small></div>
+          </div>
+          <div class="float-card float-card--2">
+            <span class="fc-ic">🔔</span>
+            <div><b>Price Alert</b><small>RELIANCE hit ₹2,950</small></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <span class="mouse"><i></i></span>
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Flutter</span><i>✦</i><span>Dart</span><i>✦</i><span>Kotlin</span><i>✦</i><span>Jetpack Compose</span><i>✦</i>
+        <span>Clean Architecture</span><i>✦</i><span>BLoC</span><i>✦</i><span>WebSockets</span><i>✦</i><span>GraphQL</span><i>✦</i>
+        <span>Firebase</span><i>✦</i><span>Riverpod</span><i>✦</i><span>MVVM</span><i>✦</i><span>Coroutines</span><i>✦</i>
+        <span>Flutter</span><i>✦</i><span>Dart</span><i>✦</i><span>Kotlin</span><i>✦</i><span>Jetpack Compose</span><i>✦</i>
+        <span>Clean Architecture</span><i>✦</i><span>BLoC</span><i>✦</i><span>WebSockets</span><i>✦</i><span>GraphQL</span><i>✦</i>
+        <span>Firebase</span><i>✦</i><span>Riverpod</span><i>✦</i><span>MVVM</span><i>✦</i><span>Coroutines</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"><span class="mono">01.</span> About Me</span>
+          <h2 class="section__title">Turning complex business needs into <span class="gradient-text">apps people love</span></h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              I'm a <strong>Mobile Application Developer</strong> with <strong>5 years of experience</strong> designing,
+              building and shipping cross-platform and native apps using <strong>Flutter, Dart, Kotlin</strong> and
+              <strong>Jetpack Compose</strong> — serving millions of end users on real-time, high-traffic platforms.
+            </p>
+            <p>
+              At <strong>Brainvire Infotech</strong>, I owned modules end-to-end across fintech, e-commerce, social,
+              communication, field-operations and sports-booking domains — from requirement analysis and architecture
+              through testing, debugging and production releases on the <strong>App Store</strong> and
+              <strong>Google Play</strong>.
+            </p>
+            <p>
+              My sweet spot: <span class="hl">real-time data</span> (WebSockets, streams), <span class="hl">clean,
+              scalable architecture</span> (Clean Architecture, BLoC, MVVM) and <span class="hl">smooth, polished UX</span>
+              — working closely with backend, QA and product teams to ship quality software.
+            </p>
+            <p>
+              Beyond client work, I independently designed, built and published <strong>PitchIQ</strong> — a cricket
+              pitch-report app on the Play Store — taking it from concept and data model to decision logic, UI and release.
+            </p>
+
+            <div class="edu">
+              <div class="edu__item">
+                <span class="edu__ic">🎓</span>
+                <div>
+                  <b>Master of Computer Applications (MCA)</b>
+                  <small>Gujarat Technological University, Ahmedabad · 2021</small>
+                </div>
+              </div>
+              <div class="edu__item">
+                <span class="edu__ic">📘</span>
+                <div>
+                  <b>Bachelor of Computer Applications (BCA)</b>
+                  <small>Xavier Institute of Computer Application, Ahmedabad · 2017</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat reveal" data-tilt>
+              <b><span class="counter" data-target="5">0</span>+</b>
+              <span>Years of Experience</span>
+            </div>
+            <div class="stat reveal" data-tilt>
+              <b><span class="counter" data-target="7">0</span>+</b>
+              <span>Apps Built &amp; Shipped</span>
+            </div>
+            <div class="stat reveal" data-tilt>
+              <b><span class="counter" data-target="1">0</span>M+</b>
+              <span>End Users Served</span>
+            </div>
+            <div class="stat reveal" data-tilt>
+              <b><span class="counter" data-target="4">0</span></b>
+              <span>Countries Launched In</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"><span class="mono">02.</span> Skills &amp; Tools</span>
+          <h2 class="section__title">My <span class="gradient-text">tech stack</span></h2>
+          <p class="section__sub">The tools I use daily to build fast, reliable, and beautiful mobile experiences.</p>
+        </div>
+
+        <div class="skills__grid">
+          <article class="skill-card reveal" data-tilt>
+            <div class="skill-card__head">
+              <span class="skill-card__ic ic-blue">
+                <svg viewBox="0 0 24 24" class="fill"><path d="M14.3 2 4.6 11.7l3 3L20.3 2h-6zm0 9.1-5.3 5.3 3 3 1.9-1.9 0 0L20.3 11h-6z" opacity=".9"/><path d="m12 19.4 2.3 2.6h6l-5.3-5.6z"/></svg>
+              </span>
+              <h3>Mobile Frameworks</h3>
+            </div>
+            <div class="tags">
+              <span>Flutter SDK</span><span>Dart</span><span>Material Design</span><span>Cupertino</span><span>Cross-platform</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-tilt>
+            <div class="skill-card__head">
+              <span class="skill-card__ic ic-green">
+                <svg viewBox="0 0 24 24" class="fill"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.87 3.22a11.4 11.4 0 0 0-9.82 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
+              </span>
+              <h3>Native Android</h3>
+            </div>
+            <div class="tags">
+              <span>Kotlin</span><span>Java</span><span>Jetpack Compose</span><span>Android SDK</span><span>XML Layouts</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-tilt>
+            <div class="skill-card__head">
+              <span class="skill-card__ic ic-violet">
+                <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </span>
+              <h3>Architecture &amp; State</h3>
+            </div>
+            <div class="tags">
+              <span>Clean Architecture</span><span>MVVM</span><span>BLoC / Cubit</span><span>Riverpod</span><span>Modular</span><span>Coroutines &amp; Flow</span><span>LiveData</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-tilt>
+            <div class="skill-card__head">
+              <span class="skill-card__ic ic-cyan">
+                <svg viewBox="0 0 24 24"><path d="M8 7 3 12l5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+              </span>
+              <h3>Integration &amp; APIs</h3>
+            </div>
+            <div class="tags">
+              <span>RESTful APIs</span><span>GraphQL</span><span>WebSockets</span><span>Method Channels</span><span>Retrofit</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-tilt>
+            <div class="skill-card__head">
+              <span class="skill-card__ic ic-orange">
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+              </span>
+              <h3>Data &amp; Backend</h3>
+            </div>
+            <div class="tags">
+              <span>Firebase</span><span>Firestore</span><span>FCM Push</span><span>Hive</span><span>Room DB</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal" data-tilt>
+            <div class="skill-card__head">
+              <span class="skill-card__ic ic-pink">
+                <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+              </span>
+              <h3>Payments &amp; Analytics</h3>
+            </div>
+            <div class="tags">
+              <span>PayFort</span><span>Apple Pay</span><span>Tabby</span><span>Tamara</span><span>MoEngage</span><span>CleverTap</span>
+            </div>
+          </article>
+
+          <article class="skill-card skill-card--wide reveal" data-tilt>
+            <div class="skill-card__head">
+              <span class="skill-card__ic ic-teal">
+                <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </span>
+              <h3>Engineering Practices</h3>
+            </div>
+            <div class="bars">
+              <div class="bar"><span>Full SDLC &amp; App Store Releases</span><div class="bar__track"><i style="--w:95%"></i></div></div>
+              <div class="bar"><span>Unit &amp; Integration Testing</span><div class="bar__track"><i style="--w:85%"></i></div></div>
+              <div class="bar"><span>Debugging &amp; Performance</span><div class="bar__track"><i style="--w:92%"></i></div></div>
+              <div class="bar"><span>Git, Code Review &amp; Agile/Scrum</span><div class="bar__track"><i style="--w:90%"></i></div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"><span class="mono">03.</span> Experience</span>
+          <h2 class="section__title">Where I've <span class="gradient-text">built &amp; shipped</span></h2>
+        </div>
+
+        <div class="exp">
+          <div class="exp__card reveal">
+            <div class="exp__top">
+              <div class="exp__logo">B</div>
+              <div class="exp__meta">
+                <h3>Android &amp; Flutter Developer</h3>
+                <p><a href="https://www.brainvire.com" target="_blank" rel="noopener">Brainvire Infotech</a> · Ahmedabad, India</p>
+              </div>
+              <span class="exp__date">Jul 2021 — Jul 2026</span>
+            </div>
+            <p class="exp__desc">
+              Designed, built, configured and maintained production mobile applications across fintech, e-commerce,
+              social, communication, field-operations and sports-booking domains — owning modules end-to-end through the full SDLC.
+            </p>
+
+            <div class="exp__projects">
+              <span class="exp__label">Apps I worked on</span>
+              <div class="exp__chips">
+                <a href="#projects">5paisa</a><a href="#projects">Pan Home</a><a href="#projects">Main Court</a>
+                <a href="#projects">Neighbourhood</a><a href="#projects">GatherHall</a><a href="#projects">NTC</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"><span class="mono">04.</span> Featured Work</span>
+          <h2 class="section__title">Projects I've <span class="gradient-text">brought to life</span></h2>
+          <p class="section__sub">Live apps on Google Play &amp; the App Store — tap a store badge to see them in action, or open the case study.</p>
+        </div>
+
+        <div class="showcase" id="showcase"></div>
+
+        <div class="more">
+          <div class="more__head reveal">
+            <h3>More projects</h3>
+            <span>Enterprise &amp; client apps · private distribution</span>
+          </div>
+          <div class="projects" id="projectsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact__glow" aria-hidden="true"></div>
+          <div class="contact__info">
+            <span class="eyebrow"><span class="mono">05.</span> Get In Touch</span>
+            <h2 class="section__title">Let's build something <span class="gradient-text">amazing</span> together</h2>
+            <p class="section__sub">
+              Whether you have a role, a project or just want to say hi — my inbox is always open.
+              I'll get back to you as soon as possible.
+            </p>
+
+            <div class="contact__list">
+              <a href="mailto:ajaykori2130@gmail.com" class="contact__item">
+                <span class="contact__ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                <div><small>Email</small><b>ajaykori2130@gmail.com</b></div>
+                <button class="copy" data-copy="ajaykori2130@gmail.com" aria-label="Copy email">Copy</button>
+              </a>
+              <a href="tel:+918200564817" class="contact__item">
+                <span class="contact__ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+                <div><small>Phone</small><b>+91 82005 64817</b></div>
+              </a>
+              <a href="https://www.linkedin.com/in/ajay-kori-dev/" target="_blank" rel="noopener" class="contact__item">
+                <span class="contact__ic"><svg viewBox="0 0 24 24" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+                <div><small>LinkedIn</small><b>ajay-kori-dev</b></div>
+              </a>
+              <a href="https://github.com/ajay1130" target="_blank" rel="noopener" class="contact__item">
+                <span class="contact__ic"><svg viewBox="0 0 24 24" class="fill"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></span>
+                <div><small>GitHub</small><b>ajay1130</b></div>
+              </a>
+            </div>
+          </div>
+
+          <form class="form" id="contactForm" novalidate>
+            <div class="field">
+              <input type="text" id="name" name="name" placeholder=" " required />
+              <label for="name">Your Name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" name="email" placeholder=" " required />
+              <label for="email">Your Email</label>
+            </div>
+            <div class="field">
+              <input type="text" id="subject" name="subject" placeholder=" " />
+              <label for="subject">Subject</label>
+            </div>
+            <div class="field">
+              <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+              <label for="message">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block magnetic">
+              Send Message
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <p class="form__note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed &amp; built by <strong>Ajay Kori</strong> · © <span id="year"></span></p>
+      <a href="#home" class="to-top magnetic" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Project modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close aria-label="Close">
+        <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
