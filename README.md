@@ -13,9 +13,6 @@ Personal portfolio website of **Ajay Ramchandra Kori**, Android & Flutter Develo
 | Main Court | Pickleball matches & venue booking | [Google Play](https://play.google.com/store/apps/details?id=com.maincourt) · [App Store](https://apps.apple.com/us/app/main-court-pickleball-matches/id6471336853) |
 | PitchIQ | My own cricket pitch-report app | [Google Play](https://play.google.com/store/apps/details?id=com.rkinfotech.pitch_iq) |
 
-## Tech
-
-Plain HTML, CSS and JavaScript — no build step or dependencies. Animated particle background, scroll reveals, live phone-mockup demos for each app, dark/light theme and fully responsive layout.
 
 
 ## Contact
